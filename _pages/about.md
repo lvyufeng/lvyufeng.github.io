@@ -23,7 +23,7 @@ Projects
 
 1. [Graph-to-graph summarization](https://github.com/cqunlp/summarization_amr_graph): A simple implementation of "***Generating Subgraph: The Essence of Summarization Task***", which is a graph-to-graph framework for summarization task.
 
-1. [Step into MIPS](https://github.com/cquca/step_into_mips): A tutorial of building a 5-level MIPS CQU based on FPGA(Which is also the guide book for students in Chongqing University). [Sources](https://github.com/cquca/step_into_mips)
+1. [Step into MIPS](https://github.com/cquca/step_into_mips): A tutorial of building a 5-level MIPS CPU based on FPGA(Which is also the guide book for students in Chongqing University). [Sources](https://github.com/cquca/step_into_mips)
 
 1. [Agricultural products data crawling platform](https://elppa12138.coding.net/p/eb_crawler)(Privately owned by Chongqing Academy of Social Sciences): A Spider management platform for data crawling task. Aims to collect products' data from **Taobao, Tmall, JingDong, Suning and Pinduoduo**(With a self-built proxy pool). 
 
