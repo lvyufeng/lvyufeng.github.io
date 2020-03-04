@@ -8,13 +8,13 @@ date: 2017-09-01
 location: "Chongqing, China"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+**Now I am working on a book of "how to write MIPS CPU"(temp title).**
 
-Heading 1
-======
+I have been teaching assistant sice 2017 for the following classes:
 
-Heading 2
-======
+1. Class of Excellence Computer Engineer, 2015. Computer Orgnization. 
 
-Heading 3
-======
+1. Class of Excellence Computer Engineer, 2016. Computer Orgnization. 
+
+1. Class of Excellence Computer Engineer, 2017. Computer Orgnization. 
+
