@@ -10,7 +10,7 @@ location: "Chongqing, China"
 
 This is a tutorial for students who is writing graduation paper, mainly for Computer Science Major.
 
-You can find the record video at [Bilibili](https://www.bilibili.com/video/av90380436)
+You can find the record video at [Bilibili](https://www.bilibili.com/video/av90380436).
 
-[Slides](https://github.com/cqunlp/how_to_start_graduation_project)
+And download [Slides](https://github.com/cqunlp/how_to_start_graduation_project).
 
