@@ -18,6 +18,12 @@ Education
 
 Work experience
 ------
+* Fall 2020: AI Engineer
+  * Huawei, Shenzhen
+  * Duties included: MindSpore model transformation, deep learning based code translation.
+  <!-- * Supervisor: CEO, Lyu -->
+
+
 * Fall 2017: Data Mining
   * Jiaxin Tech, Qingdao
   * Duties included: Hadoop Cluster Management, Data Cleaning.
@@ -43,12 +49,12 @@ Skills
   * Pytorch
   * DGL
 
-<!-- 
+
 Publications
 ======
   <ul>{% for post in site.publications %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul> -->
+  {% endfor %}</ul>
   
 Talks
 ------
