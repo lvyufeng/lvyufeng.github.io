@@ -13,7 +13,10 @@ Graduate student of Chongqing University. I obtained a bachelor of engineering d
 
 Publications
 ------
-Sorry, I have no top conference accepted paper yet. Although one of my papers has been rejected by EMNLP, I still insist on submitting to top conferences, and I am currently submitting 3 other papers.
+
+[1] A Deep Semantic Matching based Framework for Named Entity Recognition. 43rd European Conference On Information Retrieval(ECIR,CCF C), 2020. [PDF](./files/ECIR_2021.pdf)
+
+
 
 Projects
 ------
