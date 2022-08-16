@@ -16,7 +16,7 @@ Publications
 
 [1] A Deep Semantic Matching based Framework for Named Entity Recognition. 43rd European Conference On Information Retrieval(ECIR,CCF C), 2020. [PDF](./files/ECIR_2021.pdf)
 
-
+[1] ICDT: Incremental Context Guided Deliberation Transformer for Image Captioning. 19rd Pacific Rim International Conference on Artificial Intelligence(PRICAI,CCF C), 2022. [PDF](./files/PRICAI_2022.pdf)
 
 Projects
 ------
