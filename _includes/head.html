@@ -9,23 +9,6 @@
   <link rel="alternate" hreflang="{% if page_lang == 'zh' %}en{% else %}zh-CN{% endif %}" href="{{ site.url }}{{ page.lang_switch }}">
   <link rel="alternate" hreflang="{% if page_lang == 'zh' %}zh-CN{% else %}en{% endif %}" href="{{ site.url }}{{ page.url }}">
 {% endif %}
-<script>
-  (function () {
-    var path = location.pathname.replace(/\/+$/, '/') || '/';
-    if (path === '/index.html') path = '/';
-    var isEnHome = path === '/';
-    var isZhHome = path === '/zh/' || path === '/zh';
-    if (!isEnHome && !isZhHome) return;
-    var stored = null;
-    try { stored = localStorage.getItem('site-lang'); } catch (err) {}
-    if (!stored) {
-      var navLang = navigator.language || navigator.userLanguage || '';
-      if (/^zh/i.test(navLang)) stored = 'zh';
-    }
-    if (stored === 'zh' && isEnHome) location.replace('{{ base_path }}/zh/');
-    else if (stored === 'en' && isZhHome) location.replace('{{ base_path }}/');
-  })();
-</script>
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
