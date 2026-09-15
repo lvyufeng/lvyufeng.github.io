@@ -1,0 +1,19 @@
+{% assign page_lang = page.lang | default: 'en' %}
+{% if page_lang == 'zh' %}
+  {% assign ui_text = site.data.ui-text['zh-CN'] %}
+  {% assign nav_links = site.data.navigation.main_zh %}
+  {% assign site_heading = site.title_zh | default: site.title %}
+  {% assign home_url = '/zh/' %}
+{% else %}
+  {% assign ui_text = site.data.ui-text[site.locale] %}
+  {% assign nav_links = site.data.navigation.main %}
+  {% assign site_heading = site.title %}
+  {% assign home_url = '/' %}
+{% endif %}
+{% if page.lang_switch %}
+  {% assign lang_switch_url = page.lang_switch %}
+{% elsif page_lang == 'zh' %}
+  {% assign lang_switch_url = '/' %}
+{% else %}
+  {% assign lang_switch_url = '/zh/' %}
+{% endif %}

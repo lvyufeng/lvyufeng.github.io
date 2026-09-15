@@ -1,22 +1,32 @@
-# main links links
+# main links
 main:
   - title: "Publications"
     url: /publications/
 
-  - title: "Talks"
-    url: /talks/    
-
   - title: "Teaching"
-    url: /teaching/    
-    
-  # - title: "Portfolio"
-  #   url: /portfolio/
-        
-  - title: "Blog Posts"
-    url: /year-archive/
-    
+    url: /teaching/
+
+  - title: "Talks"
+    url: /talks/
+
   - title: "CV"
     url: /cv/
-    
+
   - title: "Contact"
-    url: /markdown/
+    url: /contact/
+
+main_zh:
+  - title: "论文"
+    url: /zh/publications/
+
+  - title: "教学"
+    url: /zh/teaching/
+
+  - title: "报告"
+    url: /zh/talks/
+
+  - title: "简历"
+    url: /zh/cv/
+
+  - title: "联系"
+    url: /zh/contact/

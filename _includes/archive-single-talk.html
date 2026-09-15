@@ -1,4 +1,5 @@
 {% include base_path %}
+{% include i18n.html %}
 
 {% if post.header.teaser %}
   {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
@@ -6,11 +7,19 @@
   {% assign teaser = site.teaser %}
 {% endif %}
 
-{% if post.id %}
+{% if page_lang == 'zh' and post.title_zh %}
+  {% assign title = post.title_zh %}
+{% elsif post.id %}
   {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
 {% else %}
   {% assign title = post.title %}
 {% endif %}
+{% assign item_type = post.type %}
+{% assign item_venue = post.venue %}
+{% assign item_location = post.location %}
+{% if page_lang == 'zh' and post.type_zh %}{% assign item_type = post.type_zh %}{% endif %}
+{% if page_lang == 'zh' and post.venue_zh %}{% assign item_venue = post.venue_zh %}{% endif %}
+{% if page_lang == 'zh' and post.location_zh %}{% assign item_location = post.location_zh %}{% endif %}
 
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
@@ -36,7 +45,9 @@
       <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
     {% if post.date %}<p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }}</p>{% endif %}
-    {% if post.venue %}<p class="archive__item-excerpt" itemprop="description">{{post.type}}, {{ post.venue }},  {{post.location}} {% endif %}
-    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}
+    {% if post.venue %}<p class="archive__item-excerpt" itemprop="description">{{ item_type }}, {{ item_venue }}, {{ item_location }} {% endif %}
+    {% if page_lang == 'zh' and post.excerpt_zh %}
+    <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt_zh }}</p>
+    {% elsif post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}
   </article>
 </div>

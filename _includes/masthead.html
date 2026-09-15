@@ -6,8 +6,8 @@
       <nav id="site-nav" class="greedy-nav">
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
-          {% for link in site.data.navigation.main %}
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}{{ home_url }}">{{ site_heading }}</a></li>
+          {% for link in nav_links %}
             {% if link.url contains 'http' %}
               {% assign domain = '' %}
               {% else %}
@@ -17,6 +17,17 @@
           {% endfor %}
         </ul>
         <ul class="hidden-links hidden"></ul>
+      </nav>
+      <nav class="lang-switch" aria-label="Language">
+        {% if page_lang == 'zh' %}
+          <a href="{{ base_path }}{{ lang_switch_url }}" data-lang="en" lang="en">{{ ui_text.lang_en | default: "EN" }}</a>
+          <span class="lang-switch__sep" aria-hidden="true">/</span>
+          <span class="lang-switch__current" lang="zh">{{ ui_text.lang_zh | default: "中文" }}</span>
+        {% else %}
+          <span class="lang-switch__current" lang="en">{{ ui_text.lang_en | default: "EN" }}</span>
+          <span class="lang-switch__sep" aria-hidden="true">/</span>
+          <a href="{{ base_path }}{{ lang_switch_url }}" data-lang="zh" lang="zh">{{ ui_text.lang_zh | default: "中文" }}</a>
+        {% endif %}
       </nav>
     </div>
   </div>

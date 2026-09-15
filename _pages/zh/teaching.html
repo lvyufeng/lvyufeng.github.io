@@ -1,15 +1,14 @@
 ---
-published: false
 layout: archive
-title: "Portfolio"
-permalink: /portfolio/
+title: "教学"
+permalink: /zh/teaching/
 author_profile: true
+lang: zh
+lang_switch: /teaching/
 ---
 
 {% include base_path %}
 
-
-{% for post in site.portfolio %}
+{% for post in site.teaching reversed %}
   {% include archive-single.html %}
 {% endfor %}
-

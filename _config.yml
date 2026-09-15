@@ -7,10 +7,11 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Lyu Yufeng"
+title                    : "Yufeng Lyu"
+title_zh                 : "吕昱峰"
 title_separator          : "-"
-name                     : &name "Lyu Yufeng"
-description              : &description "personal description"
+name                     : &name "Yufeng Lyu"
+description              : &description "AI Framework Researcher at BAAI. Torch-FL, LLM systems, and efficient inference."
 url                      : https://lvyufeng.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "lvyufeng/lvyufeng.github.io"
@@ -73,21 +74,25 @@ social:
 
 # Analytics
 analytics:
-  provider               :  "google-universal" # false (default), "google", "google-universal", "custom"
+  provider               :  false # false (default), "google", "google-universal", "custom"
   google:
     tracking_id          :
 
 
 # Site Author
 author:
-  name             : "Lyu Yufeng"
+  name             : "Yufeng Lyu"
+  name_zh          : "吕昱峰"
   avatar           : "me.png"
-  bio              : "A learner of NLP, and a beginner of Computer Architecture"
-  location         : "Chongqing, China"
-  employer         :
+  bio              : "AI Framework Researcher at BAAI. Torch-FL, LLM systems, and efficient inference."
+  bio_zh           : "北京智源人工智能研究院 AI 框架研究员。主要工作：Torch-FL、大语言模型系统与高效推理。"
+  location         : "Beijing, China"
+  location_zh      : "北京"
+  employer         : "BAAI"
+  employer_zh      : "北京智源人工智能研究院"
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"http://yourfullgooglescholarurl.com"
-  email            : "lvyufeng@cqu.edu.cn"
+  email            : "lvyufeng2007@gmail.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -97,13 +102,14 @@ author:
   facebook         :
   foursquare       :
   github           : "lvyufeng"
+  bilibili         : "15220601"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : 'lvyufeng'
-  orcid            : #"http://orcid.org/yourorcidurl"
+  linkedin         : "lvyufeng"
+  orcid            : "https://orcid.org/0000-0002-6531-8277"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
@@ -111,7 +117,7 @@ author:
   tumblr           :
   twitter          : #"replacethistwitterhandle"
   vine             :
-  weibo            : "5018756799"
+  weibo            :
   xing             :
   youtube          :
   wikipedia        :
@@ -202,6 +208,8 @@ defaults:
       comments: true
       share: true
       related: true
+      lang: en
+      lang_switch: /zh/
   # _pages
   - scope:
       path: ""
@@ -209,6 +217,11 @@ defaults:
     values:
       layout: single
       author_profile: true
+      lang: en
+  - scope:
+      path: "_pages/zh"
+    values:
+      lang: zh
   # _teaching
   - scope:
       path: ""
@@ -218,6 +231,8 @@ defaults:
       author_profile: true
       share: true
       comments: true
+      lang: en
+      lang_switch: /zh/teaching/
   # _publications
   - scope:
       path: ""
@@ -227,6 +242,8 @@ defaults:
       author_profile: true
       share: true
       comments: true
+      lang: en
+      lang_switch: /zh/publications/
   # _portfolio
   - scope:
       path: ""
@@ -236,6 +253,7 @@ defaults:
       author_profile: true
       share: true
       comment: true
+      lang: en
   # _talks
   - scope:
       path: ""
@@ -244,6 +262,8 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+      lang: en
+      lang_switch: /zh/talks/
 
 # Sass/SCSS
 sass:
@@ -255,7 +275,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Shanghai # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins

@@ -1,4 +1,5 @@
 {% include base_path %}
+{% include i18n.html %}
 
 {% if page.author and site.data.authors[page.author] %}
   {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
@@ -15,24 +16,36 @@
   </div>
 
   <div class="author__content">
-    <h3 class="author__name">{{ author.name }}</h3>
-    {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
+    {% if page_lang == 'zh' and author.name_zh %}
+      <h3 class="author__name">{{ author.name_zh }}</h3>
+    {% else %}
+      <h3 class="author__name">{{ author.name }}</h3>
+    {% endif %}
+    {% if page_lang == 'zh' and author.bio_zh %}
+      <p class="author__bio">{{ author.bio_zh }}</p>
+    {% elsif author.bio %}
+      <p class="author__bio">{{ author.bio }}</p>
+    {% endif %}
   </div>
 
   <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
+    <button class="btn btn--inverse">{{ ui_text.follow_button | default: "Follow" }}</button>
     <ul class="author__urls social-icons">
-      {% if author.location %}
+      {% if page_lang == 'zh' and author.location_zh %}
+        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.location_zh }}</li>
+      {% elsif author.location %}
         <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.location }}</li>
       {% endif %}
-      {% if author.employer %}
-        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.employer }}</li>
+      {% if page_lang == 'zh' and author.employer_zh %}
+        <li><i class="fa fa-fw fa-building" aria-hidden="true"></i> {{ author.employer_zh }}</li>
+      {% elsif author.employer %}
+        <li><i class="fa fa-fw fa-building" aria-hidden="true"></i> {{ author.employer }}</li>
       {% endif %}
       {% if author.uri %}
-        <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].website_label | default: "Website" }}</a></li>
+        <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link" aria-hidden="true"></i> {{ ui_text.website_label | default: "Website" }}</a></li>
       {% endif %}
       {% if author.email %}
-        <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
+        <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> {{ ui_text.email_label | default: "Email" }}</a></li>
       {% endif %}
       {% if author.keybase %}
         <li><a href="https://keybase.io/{{ author.keybase }}"><i class="fas fa-fw fa-key" aria-hidden="true"></i> Keybase</a></li>
@@ -66,6 +79,9 @@
       {% endif %}
       {% if author.github %}
         <li><a href="https://github.com/{{ author.github }}"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
+      {% endif %}
+      {% if author.bilibili %}
+        <li><a href="https://space.bilibili.com/{{ author.bilibili }}"><i class="fas fa-fw fa-play-circle" aria-hidden="true"></i> Bilibili</a></li>
       {% endif %}
       {% if author.stackoverflow %}
         <li><a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}"><i class="fab fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow</a></li>

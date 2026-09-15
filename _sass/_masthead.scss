@@ -32,12 +32,54 @@
 }
 
 .masthead__menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+
+  .greedy-nav {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
 
   ul {
     margin: 0;
     padding: 0;
     clear: both;
     list-style-type: none;
+  }
+}
+
+.lang-switch {
+  flex: 0 0 auto;
+  z-index: 21;
+  font-size: 0.85em;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+
+  a,
+  .lang-switch__current {
+    display: inline;
+    margin: 0;
+    padding: 0.15rem 0.2rem;
+    color: $masthead-link-color;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: $masthead-link-color-hover;
+    }
+  }
+
+  .lang-switch__current {
+    font-weight: 700;
+  }
+
+  .lang-switch__sep {
+    margin: 0 0.15rem;
+    color: mix(#fff, $masthead-link-color, 40%);
   }
 }
 

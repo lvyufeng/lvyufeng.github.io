@@ -1,4 +1,17 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
+<script>
+  (function () {
+    var root = document.querySelector('.lang-switch');
+    if (!root) return;
+    root.addEventListener('click', function (event) {
+      var link = event.target.closest('a');
+      if (!link) return;
+      var lang = link.getAttribute('data-lang');
+      if (!lang) return;
+      try { localStorage.setItem('site-lang', lang); } catch (err) {}
+    });
+  })();
+</script>
 
 {% include analytics.html %}
 {% include /comments-providers/scripts.html %}
