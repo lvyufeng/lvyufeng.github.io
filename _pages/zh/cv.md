@@ -50,11 +50,11 @@ lang_switch: /cv/
   * 算子后端包括厂商原生 kernel（如 ACLNN）、CUDA/兼容封装、可移植 FlagGems/Triton kernel，以及显式 CPU fallback。
   * 覆盖 eager、autograd、`torch.compile`、分布式集合通信与 profiler，支持 CUDA、昇腾、沐曦等多种加速器。
 
-* **[DeepSeek-V4-Flash 老旧硬件推理](https://github.com/lvyufeng/deepseek-v4-2080ti)** &emsp; 2026 年 5 月
-  * 独立开源项目：在 4× RTX 2080 Ti 上部署 DeepSeek-V4-Flash（284B 总参数 / 13B 激活）。
-  * 自定义 CUDA kernel，支持 MoE expert staging、稀疏 attention 与张量并行解码。
-  * CPU 驻留 Routed-Expert + H2D 异步预取，验证 64k token 上下文。
-  * [技术报告（PDF）](https://github.com/lvyufeng/deepseek-v4-2080ti/blob/master/dsv4_2080ti_report.pdf)
+* **[PocketLLM](https://github.com/lvyufeng/PocketLLM)** &emsp; 2026 年 5 月至今
+  * 独立的消费级多 GPU 推理栈（C++/CUDA 与 PyTorch）。从 4× RTX 2080 Ti 上的 DeepSeek-V4-Flash 起步，现已覆盖 MiniMax-M2.7、GLM-5.2、Qwen3.8-27B-FP8。
+  * 自定义 kernel、低比特格式、张量/专家并行，以及在无原生 FP4/FP8 张量核心的 GPU 上做 CPU 驻留 Routed-Expert staging。
+  * 4× RTX 2080 Ti 上 C++ FP4 约 401 tok/s prefill、3.7 tok/s decode，上下文 64k。
+  * [文档](https://lvyufeng.github.io/PocketLLM/) · [技术报告（PDF）](https://github.com/lvyufeng/PocketLLM/blob/master/docs/reports/dsv4_2080ti_report.pdf)
 
 科研经历
 ------

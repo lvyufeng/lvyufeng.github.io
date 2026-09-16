@@ -52,11 +52,11 @@ Selected projects
   * Per-operator backends: native vendor kernels (e.g. ACLNN), CUDA/compatibility boxing, portable FlagGems/Triton kernels, and explicit CPU fallback.
   * Covers eager execution, autograd, `torch.compile`, distributed collectives, and profiler integration, with support spanning CUDA, Ascend, MetaX, and other accelerators.
 
-* **[DeepSeek-V4-Flash inference on legacy hardware](https://github.com/lvyufeng/deepseek-v4-2080ti)** &emsp; May 2026
-  * Independent open-source runtime serving DeepSeek-V4-Flash (284B total / 13B active) on 4× RTX 2080 Ti without native FP4/FP8 tensor cores.
-  * Custom CUDA kernels for MoE expert staging, sparse attention, and tensor-parallel decoding, plus an OpenAI-compatible API.
-  * CPU-resident routed-expert storage with host-to-device staging; validated a 64k-token context window.
-  * [Technical report (PDF)](https://github.com/lvyufeng/deepseek-v4-2080ti/blob/master/dsv4_2080ti_report.pdf)
+* **[PocketLLM](https://github.com/lvyufeng/PocketLLM)** &emsp; May 2026 – present
+  * Independent C++/CUDA and PyTorch inference stack for consumer multi-GPU systems. Started as DeepSeek-V4-Flash on 4× RTX 2080 Ti; now also covers MiniMax-M2.7, GLM-5.2, and Qwen3.8-27B-FP8.
+  * Custom kernels, low-bit formats, tensor/expert parallelism, and CPU-resident routed-expert staging on GPUs without native FP4/FP8 tensor cores.
+  * On 4× RTX 2080 Ti, C++ FP4 measures about 401 tok/s prefill and 3.7 tok/s decode with a 64k-token context.
+  * [Docs](https://lvyufeng.github.io/PocketLLM/) · [Technical report (PDF)](https://github.com/lvyufeng/PocketLLM/blob/master/docs/reports/dsv4_2080ti_report.pdf)
 
 Research experience
 ------
